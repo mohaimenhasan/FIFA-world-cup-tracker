@@ -1,7 +1,8 @@
 import requests
 
-#games = requests.get('http://worldcup.sfg.io/teams/group_results').json()
-##    print('Group:', game['group']['letter'], 'Team:', game['group']['id']['teams']['team']['country'])
+games = requests.get('http://worldcup.sfg.io/teams/group_results').json()
+for game in games:
+    print('Group:', game['group']['letter'], 'Team:', game['group']['teams'])
 
 
 games = requests.get('http://worldcup.sfg.io/matches').json()
