@@ -11,8 +11,9 @@ for game in games:
         print("completed game: ", game['home_team']['country'],
               game['home_team']['goals'], " x ",
               game['away_team']['goals'],
-              game['away_team']['country'], "venue:", game['venue']
+              game['away_team']['country'], "venue:", game['venue'], "Location:", game['location']
             )
+        print("                                                ")
 gamesToday = requests.get('http://worldcup.sfg.io/matches/today').json()
 
 for game in gamesToday:
@@ -22,7 +23,7 @@ for game in gamesToday:
               game['away_team']['goals'],
               game['away_team']['country'], " venue: ", game['venue']
             )
-today="somestring"
+today="Nothing happening right now"
 for game in gamesToday:
     if game['status'] in ('in progress'):
         today=("games today-inprogress:", game['home_team']['country'],
